@@ -21,16 +21,6 @@ const fs = require ('fs')
 class Contenedor {
     constructor(filename) {
         this.filename = filename;
-        
-        async function comprobar(){
-            try{
-                await fs.promises.writeFile(`./${filename}`, "")
-            }catch(error){
-                console.log(error)
-            }
-        }
-
-        comprobar()
     }
 
     async save(objeto) {
