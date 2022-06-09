@@ -47,7 +47,7 @@ app.get('/productos',async (req,resp)=>{
     const productosTotal = await productos.getAll()
     resp.send(productosTotal)
 })
-
+//a
 app.get('/productoRandom',async (req,resp)=>{
     const productosTotal = await productos.getAll()
     const id = Math.floor(Math.random()*((productosTotal.length+1)-1)+1)
