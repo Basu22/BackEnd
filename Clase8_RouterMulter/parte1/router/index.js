@@ -1,12 +1,15 @@
 const { Router } = require('express')
-const router = Router()
+const router = Router() 
+const rutasUser = require('./rutasUser')
 
-router.get('/api',(req,res)=>{
+router.get('/',(req,res)=>{
+    res.send('Estas en /API')
+})
+
+router.get('/home',(req,res)=>{
     res.send('Estas en home')
 })
 
-router.get('/api',(req,res)=>{
-    res.send('Estas en home')
-})
+router.use('/user',rutasUser)
 
 module.exports = router
