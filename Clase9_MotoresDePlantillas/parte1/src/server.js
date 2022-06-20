@@ -3,6 +3,7 @@ const app = express()
 
 app.use(express.static('public'))
 
+
 app.listen(8080,()=>{
     console.log('Escuchando servidor: 8080')
 })
