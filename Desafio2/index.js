@@ -1,4 +1,4 @@
-const c2p3 = {
+prodconst c2p3 = {
                 title:"Comen2Pican3",
                 price: 2500,
                 thumbnail:'https://www.res.com.ar/media/catalog/product/cache/dbcd7fcd96d4e43f69e3e3703d135006/p/i/picada-grande.jpg'

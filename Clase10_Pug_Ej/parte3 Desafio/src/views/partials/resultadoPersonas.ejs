@@ -1,0 +1,24 @@
+<br>
+<% if (personas.length) { %> 
+    <table border="0">
+        <caption>Tabla de Personas</caption>
+        <tbody>
+            <tr>
+                <td></td>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Apellido</th>
+            </tr>
+                <% personas.forEach(persona => { %>
+                    <tr>
+                        <th></th>
+                        <td><%= persona.nombre %> </td>
+                        <td><%= persona.apellido %> </td>
+                        <td><%= persona.edad %> </td>
+                    </tr>
+                <% }) %> 
+        </tbody>
+    </table>
+<% } else { %> 
+    <p> No hay datos disponibles </p> 
+<% } %> 
