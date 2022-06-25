@@ -2,6 +2,6 @@
 if !productos.length
     p No tenemos productos para mostrar
 else
-    ul
+    section(class="contenedorProductos row")
         each producto in productos
-            li  Picada: #{producto.title} <br> Precio: #{producto.price} <br> <img src=#{producto.thumbnail} alt="">
+            article(class="col-2 cajaProductos")  Picada: #{producto.title} <br> <img src=#{producto.thumbnail} alt=""> <br> Precio: #{producto.price} 

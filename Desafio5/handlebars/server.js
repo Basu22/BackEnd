@@ -8,6 +8,7 @@ const { engine } = require('express-handlebars')
 app.use(express.json())
 app.use(express.urlencoded({ extended : true }))
 
+app.use('/css', express.static('./src/css'))
 app.use('/src/upload',express.static('./src/upload'))
 app.use('/productos', rutaProductos)
 

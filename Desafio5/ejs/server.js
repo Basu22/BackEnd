@@ -8,6 +8,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended : true }))
 
 app.use('/src/upload',express.static('./src/upload'))
+app.use('/css', express.static('./src/css'))
 app.use('/productos', rutaProductos)
 
 app.set('views',path.join(__dirname,'./src/views'))

@@ -1,15 +1,13 @@
-<section style= <%= display2 %> >
     <% if (!productos.length) { %>
         <p>No tenemos productos para mostrar</p>
     <% }else{ %>
-        <ul>
+        <section class="contenedorProductos row">
             <% productos.forEach(producto=> { %>
-                <li>
-                    Picada: <%= producto.name %>
-                    Precio: <%= producto.price %>
+                <article class="col-2 cajaProductos">
+                    <p>Picada: <%= producto.title %></p> 
                     <img src=<%= producto.thumbnail %>  alt="">
-                </li>
+                    <p>Precio: <%= producto.price %></p> 
+                </article>
                 <% }) %>
-        </ul>
+        </section>
     <% } %>
-</section>

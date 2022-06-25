@@ -1,13 +1,13 @@
     {{#if productos.length}}
-        <ul>
+        <section class="contenedorProductos row">
             {{#each productos}}
-                <li>
-                    Picada: {{this.name}}
-                    Precio: {{this.price}}
+                <article class="col-2 cajaProductos">
+                    Picada: {{this.title}}
                     <img src={{this.thumbnail}} alt="">
-                </li>
+                    Precio: {{this.price}}
+                </article>
             {{/each}}
-        </ul>
+        </section>
     {{else}}
         <p>No tenemos productos para mostrar</p>
     {{/if}}

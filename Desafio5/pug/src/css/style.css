@@ -1,0 +1,15 @@
+.contenedorProductos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.cajaProductos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: black 1px solid;
+}
+
+.cajaProductos img{
+    width: 100%;
+}
