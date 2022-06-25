@@ -1,14 +1,15 @@
-<% console.log(await data) %> 
-<% if (await !data.lenght) { %>
-    <p>No tenemos productos para mostrar</p>
-<% }else{ %>
-    <ul>
-        <% await data.forEach(producto=> { %>
-            <li>
-                Picada: <%= data.name %>
-                Precio: <%= data.price %>
-                <img src=<%= data.thumbnail %>  alt=""> 
-            </li>
-            <% }) %>  
-    </ul>
-<% } %> 
+<section style= <%= display2 %> >
+    <% if (!productos.length) { %>
+        <p>No tenemos productos para mostrar</p>
+    <% }else{ %>
+        <ul>
+            <% productos.forEach(producto=> { %>
+                <li>
+                    Picada: <%= producto.name %>
+                    Precio: <%= producto.price %>
+                    <img src=<%= producto.thumbnail %>  alt="">
+                </li>
+                <% }) %>
+        </ul>
+    <% } %>
+</section>

@@ -1,0 +1,13 @@
+    {{#if productos.length}}
+        <ul>
+            {{#each productos}}
+                <li>
+                    Picada: {{this.name}}
+                    Precio: {{this.price}}
+                    <img src={{this.thumbnail}} alt="">
+                </li>
+            {{/each}}
+        </ul>
+    {{else}}
+        <p>No tenemos productos para mostrar</p>
+    {{/if}}

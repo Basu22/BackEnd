@@ -1,0 +1,7 @@
+
+if !productos.length
+    p No tenemos productos para mostrar
+else
+    ul
+        each producto in productos
+            li  Picada: #{producto.title} <br> Precio: #{producto.price} <br> <img src=#{producto.thumbnail} alt="">

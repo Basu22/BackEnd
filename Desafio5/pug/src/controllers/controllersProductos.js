@@ -4,7 +4,8 @@ const getProductos = async (req,res)=>{
     try{
         const data = new Contenedor('productos.txt')
         const productos = await data.getAll()
-        res.render('main.ejs',{productos})
+        console.log(productos)
+        res.render('main.pug',{productos})
     }catch(e){
             console.log(e)
     }
