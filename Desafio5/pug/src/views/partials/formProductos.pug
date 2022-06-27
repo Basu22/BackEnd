@@ -1,8 +1,15 @@
-<section style=<%= display1 %> >
-    <form action="/productos" enctype="multipart/form-data"  method="post">
-        <input type="text" placeholder="Nombre del Producto" name="name">
-        <input type="number" name="price" placeholder="Ingrese precio">
-        <input type="file" name="thumbnail">
-        <input type="submit" value="Enviar">
-    </form>
-</section>
+h1(class="titulosH1")="Formulario Carga Productos"
+section(class="contenedorFormulario row")
+    article(class="col-4 cajaFormulario")
+        form(action="/productos" enctype="multipart/form-data" method="POST")
+            article(class="cajaForm col-12")
+                label(for="name")="Nombre del Producto:"
+                input(type="text" placeholder="Nombre del Producto" name="title")
+            article(class="cajaForm col-12")
+                label(for="name")="Precio del Producto:"
+                input(type="number" placeholder="Ingrese el Precio" name="price")
+            article
+                input(type="file" name="thumbnail")
+            article
+                input(type="submit" value="Enviar")
+    a(href="/productos")="Ir a Productos"
