@@ -11,8 +11,7 @@ const expressServer = app.listen(puerto, ()=>{
     }catch(e){
         console.log("nos surgio un error",e)
     }
-        
-})
+}) 
 
 const messagesArray = []
 app.use(express.static(path.join(__dirname,'./src/public')))
