@@ -1,0 +1,22 @@
+<h1 class="titulosH1">Formulario Carga Productos</h1>
+<section class="contenedorFormulario row">
+    <article class="col-5 cajaFormulario">
+        <form action="/productos" enctype="multipart/form-data"  method="post">
+            <article class="cajaForm col-12">
+                <label for="name">Nombre del Producto:</label>
+                <input type="text" placeholder="Nombre del Producto" name="name">
+            </article>
+            <article class="cajaForm col-12">
+                <label for="price">Precio del Producto:</label>
+                <input type="number" name="price" placeholder="Ingrese precio">
+            </article>
+            <article>
+                <input type="file" name="thumbnail">
+            </article>
+            <article>
+                <input type="submit" value="Enviar">
+            </article>
+        </form>
+    </article>
+    <a href="/productos">Ver Productos</a>
+</section>

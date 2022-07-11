@@ -11,7 +11,6 @@ fromMessage.addEventListener('submit', event=>{
     const username = usernameInput.value
     /* console.log(`Mensaje: ${message} - Username: ${username}`) */
     socket.emit('cliente:mensaje', { username, message })
-
 })
 
 socket.on('server:mensaje', messagesArray => {
@@ -23,3 +22,9 @@ socket.on('server:mensaje', messagesArray => {
     })
 
 })
+
+
+
+function renderProductos (productos){
+    
+}
