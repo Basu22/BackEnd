@@ -13,6 +13,7 @@ const expressServer = app.listen(puerto, ()=>{
     }catch(e){
         console.log("nos surgio un error",e)
     }
+<<<<<<< HEAD
         
 })
 const io = new IOServer(expressServer)
@@ -32,6 +33,9 @@ app.use('/formulario', rutaFormulario)
 
 app.set('views',path.join(__dirname,'./src/views'))
 app.set('view engine', 'ejs')
+=======
+}) 
+>>>>>>> d5947f4fbd1314fd3a87f33c08fb06984d1f19eb
 
 const messagesArray = []
 
