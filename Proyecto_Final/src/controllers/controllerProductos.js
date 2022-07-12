@@ -1,7 +1,6 @@
 const { Productos } = require('../context/productos')
 const ruta_data = process.env.PRODUCTOS
 const data = new Productos(ruta_data)
-const admin = true
 
 const obtenerProducto = async (req, res)=>{
     const { id } = req.params
@@ -43,7 +42,7 @@ const eliminarProducto = async (req, res)=>{
         const { id } = req.params
         await data.erase(id,res)
     }else{
-        res.json({ error : -1, descripcion: 'ruta /api/productos método DELETE no autorizada' })       
+        res.json({ error : -1, descripcion: 'ruta /api/productos método DELETE no autorizada' })   
     }
 }
 
