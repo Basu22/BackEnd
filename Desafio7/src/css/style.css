@@ -45,3 +45,15 @@ a{
 .cajaProductos img{
     width: 100%;
 }
+
+.textoEmail{
+    color: blue;
+    font-weight: bold;
+}
+.textoFecha{
+    color:brown;
+}
+.textoMensaje{
+    color:green;
+    font-style: italic;
+}

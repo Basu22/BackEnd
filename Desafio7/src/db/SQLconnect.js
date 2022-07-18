@@ -13,7 +13,7 @@ const configMaria = {
 
 const configLite = {
     client: 'sqlite3',
-    connection: {filename:'./db/mydb.sqlite'},
+    connection: { filename:'./src/db/mydb.sqlite' },
     useNullAsDefault:true
 }
 

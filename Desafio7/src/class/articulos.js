@@ -1,30 +1,32 @@
-const crearTablaArticulos = require('../scripts/crearBase')
+const {crearTablaMaria} = require('../scripts/crearTabla')
 
 class Articulos {
     constructor(conexion,tabla) {
-        this.conexion = conexion;
+        this.conexion = conexion
         this.tabla = tabla
     }
 
     async save(objeto) {
-        const conexion = this.conexion
-        await (this.conexion)(this.tabla).insert(objeto)
+        try{
+            await this.conexion(this.tabla).insert(objeto)
+        }catch(e){
+            console.log(e)
+        }
     }
 
     async getAll() {
         try{
-            const data = await (this.conexion).from(this.tabla).select('*')
-            if (data){
-                return data
-            }else{
-                crearTablaArticulos()
-            }
+            const data = await this.conexion.from(this.tabla).select('*')
+            console.log('desde articulos.js',data)
+            return data
         }catch(e){
             if (e.code === 'ER_NO_SUCH_TABLE'){
-                crearTablaArticulos()
+                crearTablaMaria(this.tabla)
+            }else{
+                console.log(e)
             }
         }
     }
 }
 
-module.exports = { Articulos }
+module.exports = Articulos
