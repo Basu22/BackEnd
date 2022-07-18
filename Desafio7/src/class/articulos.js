@@ -17,7 +17,6 @@ class Articulos {
     async getAll() {
         try{
             const data = await this.conexion.from(this.tabla).select('*')
-            console.log('desde articulos.js',data)
             return data
         }catch(e){
             if (e.code === 'ER_NO_SUCH_TABLE'){

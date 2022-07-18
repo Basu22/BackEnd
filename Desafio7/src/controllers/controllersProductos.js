@@ -15,10 +15,11 @@ const addProductos = async(req, res)=>{
                         thumbnail: `${req.file.destination}/${req.file.filename}`,
                         price:Number(req.body.price)
                 })
+                const productos = await data.getAll()
+                res.render('main.ejs',{productos})
         }catch(e){
                 console.log(e)
         }
-        getProductos(req,res)
 }
 
 
