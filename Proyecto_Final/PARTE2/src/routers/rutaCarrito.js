@@ -1,6 +1,7 @@
-const { Router } = require('express')
-const { mostrarCarrito, crearCarrito, agregarItemCarrito, elimiarCarrito, eliminarItemCarrito } = require('../controllers/controllerCarrito')
+import Router from 'express' 
 const router = Router()
+import {mostrarCarrito, crearCarrito, agregarItemCarrito, elimiarCarrito, eliminarItemCarrito} from '../controllers/controllerCarrito.js'
+
 
 router.get("/", mostrarCarrito)
 
@@ -11,4 +12,4 @@ router.delete("/:id", elimiarCarrito)
 router.delete("/:id/productos/:id_prod", eliminarItemCarrito)
 
 
-module.exports = router
+export default router
