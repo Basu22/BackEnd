@@ -52,20 +52,8 @@ class contenedorCarrito{
 
     async eraseItemCarrito (id,id_prod,res){
         //me traigo todos los carritos
-        console.log(id)
-        let carritos = await this.collection.aggregate([{$match:{id_carrito:id}}])
-        console.log(carritos)
+        await this.collection.updateOne({id_carrito:id},{$pull:{productos:{id_producto:Number(id_prod)}}})
         res.sendStatus(200)
-/*         //obtengo la posicion del carrito de compras con el que quiero interactuar
-        let posicion = carritos.findIndex(carrito=>carrito.id === Number(id))
-        //obtengo la posicion del producto dentro del array del carrito
-        let posicion_producto = carritos[posicion].productos.findIndex(producto=>producto.id === Number(id_prod))
-        if (id < 1  || posicion_producto===-1 ){
-            res.json({ error : 'producto no encontrado' })
-        }else{
-            carritos[posicion].productos.splice(posicion_producto,1)        
-            await fs.promises.writeFile(`./${this.carrito}`,JSON.stringify(carritos)) 
-        }*/
     }
 }
 
