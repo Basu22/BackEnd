@@ -7,8 +7,14 @@ import Articulos from '../class/articulos.js'
 const data = new Articulos(databaseMaria,process.env.TABLA_ARTICULOS)
 
 const getProductos = async (req,res)=>{
-        const productos = await data.getAll()
-        res.render('main.ejs',{productos})
+        const username = req.session.username
+        console.log(username)
+        if (!username){
+                res.redirect('/')
+        }else{
+                const productos = await data.getAll()
+                res.render('main.ejs',{productos, username})
+        }
 }
 
 const addProductos = async(req, res)=>{

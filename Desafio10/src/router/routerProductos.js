@@ -1,5 +1,5 @@
 import { Router } from 'express'
-const rutas = Router()
+const rutasProductos = Router()
 import { getProductosTest } from '../controllers/controllersProductosTest.js'
 import { getProductos, addProductos } from '../controllers/controllersProductos.js'
 import multer from 'multer'
@@ -15,15 +15,13 @@ let storage = multer.diskStorage({
 })
 let upload = multer({ storage })
 
-rutas
-    .route('/api/productos')
+rutasProductos
+    .route('/productos')
     .get(getProductos)
     .post(upload.single('thumbnail'),addProductos)
 
-rutas
-    .route('/api/productos-test')
+rutasProductos
+    .route('/productos-test')
     .get(getProductosTest)
 
-
-
-export default rutas
+export default rutasProductos

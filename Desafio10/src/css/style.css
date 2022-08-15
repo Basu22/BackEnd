@@ -13,11 +13,11 @@ a{
 .cajaFormulario{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .cajaFormulario form{
-    width: 50vh;
+    width: 100vh;
     height: 30vh;
     display: flex;
     flex-direction: column;
