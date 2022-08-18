@@ -1,0 +1,59 @@
+.titulosH1{
+    text-align: center;
+}
+a{
+    text-align: center;
+}
+
+.contenedorFormulario{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.cajaFormulario{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.cajaFormulario form{
+    width: 100vh;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.cajaForm{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contenedorProductos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.cajaProductos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: black 1px solid;
+}
+
+.cajaProductos img{
+    width: 100%;
+}
+
+.textoEmail{
+    color: blue;
+    font-weight: bold;
+}
+.textoFecha{
+    color:brown;
+}
+.textoMensaje{
+    color:green;
+    font-style: italic;
+}

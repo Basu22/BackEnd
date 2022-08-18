@@ -1,0 +1,10 @@
+<%- include('./partials/head.ejs') %> 
+<body>
+    <%- include('./partials/loginOk.ejs',{username}) %>
+    <%- include('./partials/formProductos.ejs', ) %>
+    <%- include('./partials/viewProductos.ejs',{productos} ) %>
+    <%- include('./partials/chat.ejs' ) %>
+    <script src="/socket.io/socket.io.js"></script>         
+    <script src="/src/chat/cliente.socket.js"></script>
+</body>
+</html>  
