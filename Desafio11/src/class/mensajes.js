@@ -1,10 +1,8 @@
 import mongoose from "mongoose";
 import connectMongo from '../connection/connectMongo.js'
-import esquemaMensajes from "../schema/schemaMensajes.js";
 import dotenv from 'dotenv'
 dotenv.config()
-import schemaMensajes from '../schema/normalizrMensajes.js'
-import { json } from "express";
+
 
 mongoose.connect(connectMongo.mongodb)
 

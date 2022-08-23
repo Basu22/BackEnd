@@ -8,7 +8,6 @@ const data = new Articulos(databaseMaria,process.env.TABLA_ARTICULOS)
 
 const getProductos = async (req,res)=>{
         const username = req.session.username
-        console.log(username)
         if (!username){
                 res.redirect('/')
         }else{

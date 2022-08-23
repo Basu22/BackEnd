@@ -7,12 +7,7 @@ const loginControl = (req,res)=>{
 }
 
 const validarLogin = (req,res)=>{
-    passport.use('login', new LocalStrategy((username,password,done)=>{
-        console.log(username,password)
-    }
-    ))
     req.session.username = req.body.username
-    console.log(req.session.username)
     res.redirect('/api/productos')
 }
 
