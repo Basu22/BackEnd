@@ -1,5 +1,3 @@
-import dotenv from 'dotenv'
-dotenv.config()
 import express from 'express';
 const app = express();
 import path from 'path';
@@ -11,6 +9,11 @@ import rutas from './src/router/router.js';
 import session from 'express-session';
 import cookieParser from 'cookie-parser';
 import MongoStore from 'connect-mongo';
+import dotenv from 'dotenv'
+import passport from 'passport'
+dotenv.config()
+
+
 
 const mongoOptions={
     useNewUrlParser:true,
@@ -36,10 +39,15 @@ app.use(session({
     secret:"picate",
     resave:false,
     saveUninitialized:true,
+    rolling:true,
     cookie:{
+        httpOnly:false,
+        secure:false,
         maxAge:60000,
     }
 }))
+app.use(passport.initialize())
+app.use(passport.session())
 app.use('/src/chat',express.static('./src/chat'))
 app.use('/src/upload',express.static('./src/upload'))
 app.use('/css', express.static('./src/css'))
