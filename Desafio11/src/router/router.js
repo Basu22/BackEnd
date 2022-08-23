@@ -1,7 +1,7 @@
 import { Router } from "express";
 import rutasProductos from './routerProductos.js'
 import { loginControl, validarLogin, desloguear } from "../controllers/controllersLogin.js";
-import { loginStrategy } from "../login/authStrategy.js";
+import { singupControl } from "../controllers/controllersSingup.js";
 import passport from "passport";
 const rutas = Router()
 
@@ -15,5 +15,10 @@ rutas
 rutas
     .route('/desloguear')
     .get(desloguear)
+
+rutas
+    .route('/registrarse')
+    .get(singupControl)
+
 
 export default rutas
