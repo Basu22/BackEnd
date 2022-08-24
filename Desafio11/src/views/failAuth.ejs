@@ -1,0 +1,9 @@
+<%- include('./partials/head.ejs') %> 
+<body>
+    <% if (login){ -%>
+        <%- include('./partials/failLogin.ejs') %> 
+    <% }else{ -%>
+        <%- include('./partials/failSingup.ejs') %>
+    <% } -%>
+</body>
+</html>

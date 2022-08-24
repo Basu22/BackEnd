@@ -2,9 +2,10 @@ import passport from "passport";
 import passport_local from "passport-local";
 const LocalStrategy = passport_local.Strategy
 import User from "../schema/User.js";
+import hashPassword from "../utils/hashPassword.js";
+import isValidPassword from "../utils/isInvalidPassword.js";
 
 const loginStrategy = new LocalStrategy(async (username, password, done) => {
-    console.log(username,password)
     try {
     const user = await User.findOne({ username });
         
@@ -23,29 +24,23 @@ const loginStrategy = new LocalStrategy(async (username, password, done) => {
 const registerStrategy = new LocalStrategy(
 { passReqToCallback: true },
 async (req, username, password, done) => {
-    console.log(username,password)
     try {
         const existingUser = await User.findOne({ username });
-        console.log(existingUser)
         if (existingUser) {
         return done(null, null);
         }
 
-    const newUser = {
-        username,
-        password: hashPassword(password),
-        email: req.body.email,
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-    };
+        const newUser = {
+            username,
+            password: hashPassword(password)
+        };
 
-    const createdUser = await User.create(newUser);
-    req.user = username;
-        done(null, createdUser);
-    } catch (err) {
-        console.log("Erro registrando usuario", err);
-        done("Erro en registro", null);
-    }
+        const createdUser = await User.create(newUser);
+        req.user = username;
+            done(null, createdUser);
+        } catch (err) {
+            done("Error en registro", null);
+        }
 }
 );
 
@@ -54,10 +49,12 @@ passport.use("register", registerStrategy);
 passport.use("login", loginStrategy);
 
 passport.serializeUser((user, done) => {
+    console.log("serealiza?")
     done(null, user._id);
 });
 
 passport.deserializeUser((id, done) => {
+    console.log("deserealiza?")
     User.findById(id, done);
 });
 

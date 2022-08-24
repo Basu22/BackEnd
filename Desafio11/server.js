@@ -14,7 +14,6 @@ import passport from 'passport'
 dotenv.config()
 
 
-
 const mongoOptions={
     useNewUrlParser:true,
     useUnifiedTopology:true

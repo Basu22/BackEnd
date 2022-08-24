@@ -1,7 +1,3 @@
-import passport from "passport"
-import passport_local from "passport-local"
-const LocalStrategy = passport_local.Strategy
-
 const loginControl = (req,res)=>{
     res.render('login.ejs')
 }
@@ -22,4 +18,9 @@ const desloguear = (req, res)=>{
     })
 }
 
-export {loginControl, validarLogin, desloguear}
+const failLogin = (req,res)=>{
+    let login = true
+    res.render('failAuth.ejs', {login})
+}
+
+export {loginControl, validarLogin, desloguear, failLogin}
